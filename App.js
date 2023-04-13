@@ -1,15 +1,40 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {Button, StyleSheet, Text, View} from 'react-native';
+import Repository from './repository/repository';
+import {useState} from "react";
+import {NavigationContainer} from "@react-navigation/native";
+import MyStack from "./presentation/navigation/navigation_stack";
 
-export default function App() {
+/*export default function App() {
+  const [cocktail, setCocktail] = useState(undefined);
+  const dataRepository = new Repository();
+  const getRandom = async ()=>{
+    try{
+      const res = await dataRepository.getRandomCocktail();
+      setCocktail(res);
+    } catch (e) {
+    }
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+
+      <MyStack>
+          {/!*<View style={styles.container}>
+              <Text>Welcome</Text>
+              <StatusBar style="auto" />
+              <Button title={'Get random'} onPress={getRandom}/>
+              <Button title={'Send log'} onPress={()=>{console.log('Log')}}/>
+              <Text>{
+                  cocktail?JSON.stringify(cocktail.obj):'No data'
+              }</Text>
+          </View>*!/}
   );
+}*/
+export default function App(){
+    return <MyStack/>
 }
 
+{/*
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -18,3 +43,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+*/}
